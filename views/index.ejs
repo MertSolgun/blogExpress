@@ -1,0 +1,29 @@
+<div class="author">
+  <h1 class="author__Heading">Hi, I am Mert.</h1>
+  <p class="author__body">I'm Full Stack Web Developer</p>
+</div>
+
+<img
+  src="https://qph.cf2.quoracdn.net/main-qimg-eb3620f9ab9c16f6f9dd268ff09afbe5"
+  alt="person-img"
+  class="hero-image"
+  height="528"
+  width="981"
+/>
+
+<section class="articles">
+  <h2 class="articles__heading">Latest Posts</h2>
+  <ul class="article-ul">
+    <% data.forEach(post => { %>
+    <li>
+      <a href="/post/<%= post._id %>">
+        <span><%= post.title %></span>
+        <span class="article-list__date">
+          <%= post.createdAt.toDateString() %>
+        </span>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+  <a href="#" class="pagination"> &lt; View Older Posts </a>
+</section>
