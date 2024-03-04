@@ -9,10 +9,10 @@ const PORT = 8001 || process.env.PORT;
 connectDB();
 
 /*--------Template Engine----------*/
-app.use(expressLayout);
-app.set("layout", "./layouts/main");
+app.use(expressLayout); // middleware tanimlama
+app.use(express.static("public")); //public klasorleri tanimlama
+app.set("layout", "./layouts/main"); //layout yolunu tanitma
 app.set("view engine", "ejs");
-app.use(express.static("public"));
 /*--------Template Engine----------*/
 
 app.use("/", require("./server/router/main"));
